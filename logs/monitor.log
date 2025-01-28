@@ -1,0 +1,165 @@
+Wed Jan 29 01:03:47 AM EET 2025
+
+
+Disk Usage:
+Filesystem     1K-blocks    Used Available Use% Mounted on
+tmpfs             606800    1600    605200   1% /run
+/dev/sda2       14311548 9606024   3998504  71% /
+tmpfs            3033984       0   3033984   0% /dev/shm
+tmpfs               5120       8      5112   1% /run/lock
+tmpfs             606796     136    606660   1% /run/user/1000
+
+
+
+
+
+CPU Usage:
+8.12%
+
+
+Memory Usage:
+Total: 6.06797 GB
+Used: 1.20403 GB
+Free: 4.86394 GB
+
+
+
+Top 5 Memory Consuming Processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+hesha       2849 15.4  6.9 4573664 420924 ?      Ssl  Jan28  25:58 /usr/bin/gnome-shell
+hesha       3607  0.0  1.4 1237620 89576 ?       Sl   Jan28   0:04 /usr/libexec/mutter-x11-frames
+root        1317  0.0  1.2 1989724 77596 ?       Ssl  Jan28   0:06 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+hesha       3502  0.0  1.2 613984 75376 ?        Ssl  Jan28   0:00 /usr/libexec/gsd-xsettings
+hesha       3765  0.0  1.0 2878000 65988 ?       Sl   Jan28   0:01 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com/app
+
+
+
+#############################################################################################################
+
+
+
+Wed Jan 29 01:03:55 AM EET 2025
+
+
+Disk Usage:
+Filesystem     1K-blocks    Used Available Use% Mounted on
+tmpfs             606800    1600    605200   1% /run
+/dev/sda2       14311548 9606024   3998504  71% /
+tmpfs            3033984       0   3033984   0% /dev/shm
+tmpfs               5120       8      5112   1% /run/lock
+tmpfs             606796     136    606660   1% /run/user/1000
+
+
+[0;31mWARNING:[0m /dev/sda2 usage above 70%
+
+
+
+CPU Usage:
+8.12%
+
+
+Memory Usage:
+Total: 6.06797 GB
+Used: 1.19787 GB
+Free: 4.8701 GB
+
+
+
+Top 5 Memory Consuming Processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+hesha       2849 15.4  6.9 4565504 420924 ?      Ssl  Jan28  26:02 /usr/bin/gnome-shell
+hesha       3607  0.0  1.4 1237620 89576 ?       Sl   Jan28   0:04 /usr/libexec/mutter-x11-frames
+root        1317  0.0  1.2 1989724 77596 ?       Ssl  Jan28   0:06 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+hesha       3502  0.0  1.2 613984 75376 ?        Ssl  Jan28   0:00 /usr/libexec/gsd-xsettings
+hesha       3765  0.0  1.0 2878000 65988 ?       Sl   Jan28   0:01 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com/app
+
+
+
+#############################################################################################################
+
+
+
+Wed Jan 29 01:04:20 AM EET 2025
+
+
+Disk Usage:
+Filesystem     1K-blocks    Used Available Use% Mounted on
+tmpfs             606800    1600    605200   1% /run
+/dev/sda2       14311548 9606024   3998504  71% /
+tmpfs            3033984       0   3033984   0% /dev/shm
+tmpfs               5120       8      5112   1% /run/lock
+tmpfs             606796     136    606660   1% /run/user/1000
+
+
+
+
+
+CPU Usage:
+8.13%
+
+
+Memory Usage:
+Total: 6.06797 GB
+Used: 1.19832 GB
+Free: 4.86965 GB
+
+
+
+Top 5 Memory Consuming Processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+hesha       2849 15.5  6.9 4573664 420924 ?      Ssl  Jan28  26:10 /usr/bin/gnome-shell
+hesha       3607  0.0  1.4 1237620 89576 ?       Sl   Jan28   0:04 /usr/libexec/mutter-x11-frames
+root        1317  0.0  1.2 1989724 77596 ?       Ssl  Jan28   0:06 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+hesha       3502  0.0  1.2 613984 75376 ?        Ssl  Jan28   0:00 /usr/libexec/gsd-xsettings
+hesha       3765  0.0  1.0 2878000 65988 ?       Sl   Jan28   0:01 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com/app
+
+
+
+#############################################################################################################
+
+
+
+Wed Jan 29 01:05:58 AM EET 2025
+
+
+Disk Usage:
+Filesystem     1K-blocks    Used Available Use% Mounted on
+tmpfs             606800    1600    605200   1% /run
+/dev/sda2       14311548 9606028   3998500  71% /
+tmpfs            3033984       0   3033984   0% /dev/shm
+tmpfs               5120       8      5112   1% /run/lock
+tmpfs             606796     140    606656   1% /run/user/1000
+
+
+[0;31mWARNING:[0m tmpfs usage above 0%
+[0;31mWARNING:[0m /dev/sda2 usage above 0%
+[0;31mWARNING:[0m tmpfs usage above 0%
+[0;31mWARNING:[0m tmpfs usage above 0%
+
+
+
+CPU Usage:
+8.15%
+
+
+Memory Usage:
+Total: 6.06797 GB
+Used: 1.24009 GB
+Free: 4.82788 GB
+
+
+
+Top 5 Memory Consuming Processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+hesha       2849 15.6  7.0 4575400 428732 ?      Ssl  Jan28  26:36 /usr/bin/gnome-shell
+hesha       3607  0.0  1.4 1237620 89576 ?       Sl   Jan28   0:04 /usr/libexec/mutter-x11-frames
+root        1317  0.0  1.2 1989724 77596 ?       Ssl  Jan28   0:06 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+hesha       3502  0.0  1.2 613984 75376 ?        Ssl  Jan28   0:00 /usr/libexec/gsd-xsettings
+hesha       5631  2.2  1.1 715760 72184 pts/1    Sl+  01:04   0:02 gedit monitor.log
+
+
+
+#############################################################################################################
+
+
+
