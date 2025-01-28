@@ -1,0 +1,125 @@
+#!/bin/bash
+
+Syntax(){ 
+	echo "Syntax: ./task1"
+	echo "Syntax: ./task1 -t THRESHOLD"
+	echo "Syntax: ./task1 -f FILENAME"
+	echo "Syntax: ./task1 -tf THRESHOLD FILENAME"
+	echo "Syntax: ./task1 -ft THRESHOLD FILENAME"
+}
+
+BODY() {
+
+#Enter date in log file
+date
+echo -e "\n"
+
+####################################################################################################################################################################################	
+#Disk Usage
+echo -e "Disk Usage:"
+df
+echo -e "\n"
+
+####################################################################################################################################################################################
+#Warning
+if [ "$1" == "-t" -o $1 == "-ft" -o $1 == "-tf" ]; then
+	#Set warning threshold specified by the user
+	threshold=$2
+	
+	#Warning if usage above threshold
+	#Send E-mail
+	warning_message=`df | sed 's/%/ /' | awk -v threshold="$threshold" -v red="$RED" -v nc="$NC" -F " " '{if ($5 ~ /^[0-9]+$/ && $5 > threshold){printf"%sWARNING:%s %s usage above %s%%\n", red, nc, $1, threshold};}'`
+	if [ -n "$warning_message" ]; then
+		echo "$warning_message"
+	 	echo "$warning_message" | mail -s "Disk Usage" 1501145@eng.asu.edu.eg
+	fi
+	
+	echo -e "\n\n"
+		
+else
+	#Warning if usage above 80%
+	warning_message=`df | sed 's/%/ /' | awk -v red="$RED" -v nc="$NC" -F " " '{if ($5 ~ /^[0-9]+$/ && $5 > 80){printf"%sWARNING:%s %s usage above 80%\n", red, nc, $1};}'`
+	
+	#Send E-mail
+	if [ -n "$warning_message" ]; then
+		echo "$warning_message"
+		echo "$warning_message" | mail -s "Disk Usage" 1501145@eng.asu.edu.eg
+	fi
+	
+	echo -e "\n\n"
+fi
+
+
+####################################################################################################################################################################################
+#CPU Usage
+echo -e "CPU Usage:"
+mpstat | tail -n 1 | awk -F " " '{printf"%s%%", 100-$13}'
+echo -e "\n\n"
+
+####################################################################################################################################################################################
+#Memory Usage
+echo -e "Memory Usage:"
+free | grep "Mem" | awk -F " " '{printf"Total: %s GB\nUsed: %s GB\nFree: %s GB\n", $2/1000000, $3/1000000, $7/1000000;}'
+echo -e "\n\n"
+
+####################################################################################################################################################################################
+#Display top 5 processes in terms of memory usage
+echo -e "Top 5 Memory Consuming Processes:"
+ps aux --sort=-%mem | head -n 6
+echo -e "\n\n"
+echo -e "#############################################################################################################"
+echo -e "\n\n"
+}
+
+
+
+
+
+
+RED='\033[0;31m'
+NC='\033[0m'
+
+
+#Check number of arguements provided
+if [ $# -lt 1 ];then
+	BODY | tee -a monitor.log
+else
+	#If user wants to rename the file
+	if [ "$1" == "-f" ]; then
+		#Error detection
+		if [ $# == "2" ]; then
+			#Set output file name as specified by the user
+			output_file=$2
+			BODY "$1" "$2" | tee -a $output_file
+		else
+			echo -e "${RED}Syntax error.${NC}"
+			Syntax
+		fi
+		
+	#"If user wants to set the threshold at which he gets a disk uage warning	
+	elif [ $1 == "-t" ];then
+		#Error detection
+		if [ $# == "2" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
+			BODY "$1" "$2" | tee -a monitor.log
+		else
+			echo -e "${RED}Syntax error.${NC}"
+			Syntax
+		fi
+	
+	#If user wants to both rename output file and set threshold	
+	elif [ $1 == "-tf" -o $1 == "-ft" ]; then
+		#Error detection
+		if [ $# == "3" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
+			output_file=$3
+			BODY "$1" "$2" "$3" | tee -a $output_file
+		else
+			echo -e "${RED}Syntax error.${NC}"
+			Syntax
+		fi
+	
+	#Error detection	
+	else
+		echo -e "${RED}Syntax error.${NC}"
+		Syntax
+	fi
+fi
