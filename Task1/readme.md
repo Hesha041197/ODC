@@ -1,4 +1,4 @@
-#General:
+### Task1
 
 Hello,
 
@@ -10,13 +10,13 @@ Now, Let's break down the script.
 
 
 
-Functions:
+## Functions:
 I started by defining the function "Syntax" which will be used later to show the correct syntax - to the user - that can be used with the script to avoid errors.
 
 
 
 
-'BODY()':
+# 'BODY()':
 
 I started by using the 'date' command to show the date and time for when the script was invoked which helps with tracking the logs and makes it much easier to 'grep' a specfic day if needed.
 
@@ -30,25 +30,25 @@ I started by using the 'date' command to show the date and time for when the scr
  
  
  
- CPU Usage:
+## CPU Usage:
  'mpstat' was used along with awk to check the CPU usage.
  
  
  
  
-Memory Usage:
+## Memory Usage:
 In this section, We used 'free' along with 'grep' to isolate the 'MEM' row then used 'awk' to calculate the free, used and total memory.
 
 
 
 
-Top 5 processes:
+## Top 5 processes:
 To do this I used the 'ps' command with the option 'aux' to display all processes with CPU and MEM usage for each process then added '--sort' option to sort the 'MEM' usage in a descending order.
 
 
 
 
-Main code:
+## Main code:
 For readability purposes we defined and used 'RED' for the red font and 'NC' for no color font.
 
 I used an 'if' conditional to check if the number of provided arguements is less than 1 or not to determine if the user wants to use the script with options or not.
