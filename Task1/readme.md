@@ -1,4 +1,4 @@
-### Task1
+# Task1
 
 Hello,
 
@@ -16,7 +16,7 @@ I started by defining the function "Syntax" which will be used later to show the
 
 
 
-# 'BODY()':
+### 'BODY()':
 
 I started by using the 'date' command to show the date and time for when the script was invoked which helps with tracking the logs and makes it much easier to 'grep' a specfic day if needed.
 
